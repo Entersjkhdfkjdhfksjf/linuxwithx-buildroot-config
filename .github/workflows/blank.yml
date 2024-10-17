@@ -29,7 +29,13 @@ jobs:
       - name: Build
         run: |
           sudo apt install g++ make libncurses-dev unzip bc bzip2 libelf-dev libssl-dev git wget cpio -y
+          cd
           git clone https://git.buildroot.net/buildroot
           cp .config buildroot
           cd buildroot
           make -j $(nproc)
+
+      - name: Download
+        uses: actions/download-artifact@v4.1.8
+        with:
+          path: ~/buildroot/output/images
