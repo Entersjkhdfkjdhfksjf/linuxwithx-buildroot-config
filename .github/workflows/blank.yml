@@ -40,4 +40,4 @@ jobs:
       - name: Download
         uses: actions/download-artifact@v4.1.8
         with:
-          path: ~/buildroot/output/images
+          path: /home/runner/work/linuxwithx-buildroot-config/linuxwithx-buildroot-config/buildroot/output/images
