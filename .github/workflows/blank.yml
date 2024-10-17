@@ -29,10 +29,12 @@ jobs:
       - name: Build
         run: |
           sudo apt install g++ make libncurses-dev unzip bc bzip2 libelf-dev libssl-dev git wget cpio -y
-          cd
           git clone https://git.buildroot.net/buildroot
           cp .config buildroot
+          echo copied
+          echo finding dir
           cd buildroot
+          pwd
           make -j $(nproc)
 
       - name: Download
